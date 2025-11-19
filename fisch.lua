@@ -1156,8 +1156,8 @@ InterfaceManager:SetLibrary(Fluent)
 -- SaveManager:IgnoreThemeSettings()
 SaveManager:SetIgnoreIndexes({})
 
-InterfaceManager:SetFolder("SpaceHub")
-SaveManager:SetFolder("SpaceHub/Fisch")
+InterfaceManager:SetFolder("NotHub")
+SaveManager:SetFolder("NotHub/Fisch")
 
 InterfaceManager:BuildInterfaceSection(Tabs.Settings)
 SaveManager:BuildConfigSection(Tabs.Settings)
