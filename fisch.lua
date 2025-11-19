@@ -521,7 +521,7 @@ function WebhookManager()
             local LvlPlayer = game:GetService("Players").LocalPlayer.leaderstats.Level.Value
 
             local Embed = {
-                title = 'Space Hub',
+                title = 'Not Hub',
                 color = 0x8B26BB,
                 fields = {
                     { name = 'Player Profile', value = playerProfileUrl },
@@ -539,7 +539,7 @@ function WebhookManager()
                     Method = 'POST',
                     Headers = { ['Content-Type'] = 'application/json' },
                     Body = game:GetService('HttpService'):JSONEncode({
-                        username = 'Space Hub | Fisch',
+                        username = 'Not Hub| Fisch',
                         avatar_url = 'https://cdn.discordapp.com/icons/1241045437884923965/6e134ec00e5adf7fc7f82fcabce45e8a.webp?size=4096',
                         embeds = { Embed }
                     }),
@@ -1166,7 +1166,7 @@ SaveManager:BuildConfigSection(Tabs.Settings)
 Window:SelectTab(1)
 
 Fluent:Notify({
-    Title = "Space Hub",
+    Title = "Not Hub",
     Content = "The script has been loaded.",
     Duration = 8
 })
