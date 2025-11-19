@@ -1,9 +1,5 @@
-
--- v1.6
-
 local ProtectPremium = false
 
---<>----<>----<>----< Getting Services >----<>----<>----<>--
 AnalyticsService = game:GetService("AnalyticsService")
 CollectionService = game:GetService("CollectionService")
 DataStoreService = game:GetService("DataStoreService")
@@ -33,7 +29,6 @@ GuiService = game:GetService("GuiService")
 print("ClientMonsterTools.lua loaded")
 
 
---<>----<>----<>----< Anti Afk >----<>----<>----<>--
 game.Players.LocalPlayer.Idled:Connect(function()
     VirtualUser:CaptureController()
     VirtualUser:ClickButton2(Vector2.new())
@@ -41,7 +36,6 @@ game.Players.LocalPlayer.Idled:Connect(function()
 end)
 warn("[Anti Afk] - loaded successfully") 
 
---<>----<>----<>----< Main Script >----<>----<>----<>--
 print("[Not Hub | Fisch]: loading...")
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
@@ -57,7 +51,6 @@ local Window = Fluent:CreateWindow({
     MinimizeKey = Enum.KeyCode.LeftControl
 })
 
--- Creating tabs
 local Tabs = {
     Home = Window:AddTab({ Title = "Home", Icon = "home" }),
     Main = Window:AddTab({ Title = "Main", Icon = "code" }),
@@ -171,14 +164,12 @@ local itemSpots = {
     Fish_Radar = CFrame.new(365.75177, 134.50499, 274.105804, 0.704499543, -0.111681774, -0.70086211, 1.32396817e-05, 0.987542748, -0.157350808, 0.709704578, 0.110844307, 0.695724905)
 }
 
--- Locals
 local LocalPlayer = Players.LocalPlayer
 local LocalCharacter = LocalPlayer.Character
 local HumanoidRootPart = LocalCharacter:FindFirstChild("HumanoidRootPart")
 local ActiveFolder = Workspace:FindFirstChild("active")
 local PlayerGUI = LocalPlayer:FindFirstChildOfClass("PlayerGui")
 
--- Varbiables
 
 local AutoFreeze = false
 local autoShake = false
@@ -198,7 +189,6 @@ local AutoAppraiser = false
 
 local Keybind = Enum.KeyCode.F
 
--- Rest
 
 PlayerGUI.ChildAdded:Connect(function(GUI)
     if GUI:IsA("ScreenGui") then
@@ -289,8 +279,7 @@ function ZoneCasting()
                         local platformSize = Vector3.new(10, 1, 10)
                         local platformPositionOffset = Vector3.new(0, -4, 0)
 
-                        -- Custom Zones
-                        if selectedZoneCast == "Bluefin Tuna Abundance" then
+                                                if selectedZoneCast == "Bluefin Tuna Abundance" then
                             local selectedZone = Workspace.zones.fishing:FindFirstChild("Deep Ocean")
                             if selectedZone then
                                 local abundanceValue = selectedZone:FindFirstChild("Abundance")
@@ -325,7 +314,7 @@ function ZoneCasting()
                                 end
                             end
                         else
-                            -- Default Zones
+                            
                             local selectedZone = Workspace.zones.fishing:FindFirstChild(selectedZoneCast)
                             if selectedZone then
                                 local bobberPosition
