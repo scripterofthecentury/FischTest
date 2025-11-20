@@ -124,7 +124,7 @@ ImageButton.Size = UDim2.new(0, 64, 0, 64)
 ImageButton.Image = "rbxassetid://106120414256650" -- Open image asset ID
 local isOpen = true -- Variable to track the state
 
-ImageButton.MouseButton1Click:Connect(function()
+UIButton.MouseButton1Click:Connect(function()
     -- Animate the button size
     ImageButton:TweenSize(UDim2.new(0, 60, 0, 60), Enum.EasingDirection.In, Enum.EasingStyle.Elastic, 0.1)
     delay(0.1, function()
