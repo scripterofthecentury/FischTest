@@ -19,8 +19,7 @@ local Window = Fluent:CreateWindow({
 	Theme = "Normal Theme",
 	MinimizeKey = Enum.KeyCode.LeftControl
 })
-Window:Minimize()  -- Opens the GUI on script load
-do 
+
 	Config = {
 
 	}
@@ -4214,3 +4213,8 @@ while true do
     wait(0)
 end
 end
+
+task.spawn(function()
+    task.wait(1)      -- gives Fluent time to finish building the UI
+    Window:Minimize() -- open GUI automatically
+end)
