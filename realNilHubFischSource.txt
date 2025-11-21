@@ -19,7 +19,7 @@ local Window = Fluent:CreateWindow({
 	Theme = "Normal Theme",
 	MinimizeKey = Enum.KeyCode.LeftControl
 })
-
+Window:Minimize()  -- Opens the GUI on script load
 do 
 	Config = {
 
