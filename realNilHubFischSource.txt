@@ -124,12 +124,13 @@ ImageButton.Size = UDim2.new(0, 64, 0, 64)
 ImageButton.Image = "rbxassetid://106120414256650" -- Open image asset ID
 local isOpen = true -- Variable to track the state
 
-UIButton.MouseButton1Down:Connect(function()
-    -- Animate the button size
+ImageButton.Activated:Connect(function()
+    -- Animate the button click
     ImageButton:TweenSize(UDim2.new(0, 60, 0, 60), Enum.EasingDirection.In, Enum.EasingStyle.Elastic, 0.1)
     delay(0.1, function()
         ImageButton:TweenSize(UDim2.new(0, 64, 0, 64), Enum.EasingDirection.Out, Enum.EasingStyle.Elastic, 0.1)
     end)
+
 
     -- Toggle the image based on the state
     if isOpen then
@@ -139,12 +140,12 @@ UIButton.MouseButton1Down:Connect(function()
     end
     isOpen = not isOpen -- Toggle the state
 
-    -- Simulate key presses
-    local VirtualInputManager = game:GetService("VirtualInputManager")
-    VirtualInputManager:SendKeyEvent(true,"RightControl",false,game)
-    VirtualInputManager:SendKeyEvent(false,"RightControl",false,game)
-    VirtualInputManager:SendKeyEvent(true,"LeftControl",false,game)
-    VirtualInputManager:SendKeyEvent(false,"LeftControl",false,game)
+        -- Toggle GUI visibility directly
+    if Window.Visible then
+        Window:Minimize()
+    else
+        Window:Minimize()
+    end
 end)
 
 UICorner.CornerRadius = UDim.new(0, 100)
