@@ -4199,22 +4199,20 @@ do
 
 
 	InterfaceManager:SetLibrary(Fluent)
-	InterfaceManager:SetFolder("Normal Hub")
-	InterfaceManager:BuildInterfaceSection(Tap.Settings)
-	Window:SelectTab(1)
-	SaveManager:LoadAutoloadConfig()
-	Fluent:SetTheme("Normal Theme")
-	setfflag("TaskSchedulerTargetFps", "1000")
-setfpscap(120)
-while true do
-    if (game:GetService("Workspace").DistributedGameTime % 1 * 60) > 30 then
+InterfaceManager:SetFolder("Normal Hub")
+InterfaceManager:BuildInterfaceSection(Tap.Settings)
+Window:SelectTab(1)
+SaveManager:LoadAutoloadConfig()
+Fluent:SetTheme("Normal Theme")
+setfflag("TaskSchedulerTargetFps", "1000")
+
+RunService.RenderStepped:Connect(function()
+    if (Workspace.DistributedGameTime % 1 * 60) > 30 then
         setfpscap(120)
     end
-    wait(0)
-end
-end
+end)
 
 task.spawn(function()
-    task.wait(1)      -- gives Fluent time to finish building the UI
-    Window:Minimize() -- open GUI automatically
+    task.wait(1)
+    Window:Minimize()
 end)
