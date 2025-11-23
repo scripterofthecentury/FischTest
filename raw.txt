@@ -10,9 +10,9 @@ local SaveManager = loadstring(game:HttpGet(repo .. "addons/SaveManager.lua"))()
 
 local Window = Library:CreateWindow({
 
-    Title = "MEOWL HUB",
+    Title = "Not Hub",
 
-    Footer = "v2.59.04",
+    Footer = "Testing",
 
     Icon = 95816097006870,
 
