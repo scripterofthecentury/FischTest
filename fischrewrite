@@ -22,11 +22,8 @@ local Window = Library:CreateWindow({
 
 })
 
--- Aba única Main
 
 local MainTab = Window:AddTab("Main", "house")
-
--- Criação de GroupBoxes no estilo do script Blox Fruits
 
 local GroupBoxes = {}
 
@@ -46,19 +43,13 @@ for i, name in ipairs(groupboxNames) do
 
 end
 
-local FishingGroup = GroupBoxes["Fishing Features"]
+local FishingGroup = GroupBoxes["Main Features"]
 
-local PlayerMovimentGroup = GroupBoxes["Player Moviment"]
+local PlayerMovimentGroup = GroupBoxes["Movement"]
 
-local TPGroup = GroupBoxes["TP Features"]
+local TPGroup = GroupBoxes["TP Tools"]
 
-local QoLGroup = GroupBoxes["Quality Of Life"]
-
---=============================
-
--- SPEED
-
---=============================
+local QoLGroup = GroupBoxes["Others"]
 
 local speedEnabled = false
 
@@ -66,15 +57,14 @@ local speedPower = 75
 
 local speedMethod = "Humanoid"
 
--- Toggle Speed9
 
 PlayerMovimentGroup:AddToggle("SpeedToggle", {
 
-    Text = "SPEED TOGGLE",
+    Text = "SPEED",
 
     Default = false,
 
-    Tooltip = "Activates/Deactivates speed loop",
+    Tooltip = "Activates/Deactivates speed",
 
     Callback = function(state)
 
@@ -84,11 +74,9 @@ PlayerMovimentGroup:AddToggle("SpeedToggle", {
 
 })
 
--- Speed Power Slider
-
 PlayerMovimentGroup:AddSlider("SpeedPowerSlider", {
 
-    Text = "SPEED POWER",
+    Text = "SPEED",
 
     Default = speedPower,
 
@@ -106,11 +94,10 @@ PlayerMovimentGroup:AddSlider("SpeedPowerSlider", {
 
 })
 
--- Speed Method Dropdown
 
 PlayerMovimentGroup:AddDropdown("SpeedMethodDropdown", {
 
-    Text = "SPEED METHOD",
+    Text = "METHOD",
 
     Values = {"Humanoid", "CFrame Teleport", "Velocity"},
 
@@ -128,7 +115,6 @@ PlayerMovimentGroup:AddDropdown("SpeedMethodDropdown", {
 
 })
 
--- Loop que aplica o Speed
 
 spawn(function()
 
@@ -176,11 +162,6 @@ spawn(function()
 
 end)
 
---=============================
-
--- JUMP POWER
-
---=============================
 
 local jumpEnabled = false
 
@@ -190,15 +171,14 @@ local jumpCount = 1
 
 local jumpMethod = "Humanoid"
 
--- Toggle JumpPower
 
 PlayerMovimentGroup:AddToggle("JumpPowerToggle", {
 
-    Text = "JUMP POWER TOGGLE",
+    Text = "TOGGLE JUMP POWER",
 
     Default = false,
 
-    Tooltip = "Activates/Deactivates jump power loop",
+    Tooltip = "Activates/Deactivates jump power",
 
     Callback = function(state)
 
@@ -208,11 +188,9 @@ PlayerMovimentGroup:AddToggle("JumpPowerToggle", {
 
 })
 
--- Jump Power Slider
-
 PlayerMovimentGroup:AddSlider("JumpPowerSlider", {
 
-    Text = "JUMP POWER",
+    Text = "JUMP POWER SLIDER",
 
     Default = jumpPower,
 
@@ -230,11 +208,9 @@ PlayerMovimentGroup:AddSlider("JumpPowerSlider", {
 
 })
 
--- Jump Count Input
-
 PlayerMovimentGroup:AddInput("JumpCountInput", {
 
-    Text = "JUMP COUNT",
+    Text = "NUMBER OF JUMPS",
 
     Default = tostring(jumpCount),
 
@@ -252,7 +228,6 @@ PlayerMovimentGroup:AddInput("JumpCountInput", {
 
 })
 
--- Jump Method Dropdown
 
 PlayerMovimentGroup:AddDropdown("JumpPowerMethodDropdown", {
 
@@ -274,7 +249,6 @@ PlayerMovimentGroup:AddDropdown("JumpPowerMethodDropdown", {
 
 })
 
--- Loop que aplica JumpPower
 
 spawn(function()
 
@@ -330,21 +304,15 @@ spawn(function()
 
 end)
 
---=============================
-
--- NOCLIP
-
---=============================
 
 local noclipEnabled = false
 
 local noclipMethod = "Normal"
 
--- Toggle Noclip
 
 PlayerMovimentGroup:AddToggle("NoclipToggle", {
 
-    Text = "NOCLIP TOGGLE",
+    Text = "NOCLIP",
 
     Default = false,
 
@@ -358,7 +326,6 @@ PlayerMovimentGroup:AddToggle("NoclipToggle", {
 
 })
 
--- Noclip Method Dropdown
 
 PlayerMovimentGroup:AddDropdown("NoclipMethodDropdown", {
 
@@ -380,7 +347,6 @@ PlayerMovimentGroup:AddDropdown("NoclipMethodDropdown", {
 
 })
 
--- Loop Noclip
 
 spawn(function()
 
@@ -426,11 +392,6 @@ spawn(function()
 
 end)
 
---=============================
-
--- INF JUMP
-
---=============================
 
 local infJumpEnabled = false
 
@@ -440,7 +401,7 @@ local infJumpMethod = "Normal"
 
 PlayerMovimentGroup:AddToggle("InfJumpToggle", {
 
-    Text = "INF JUMP TOGGLE",
+    Text = "INFINITE JUMP",
 
     Default = false,
 
@@ -454,7 +415,6 @@ PlayerMovimentGroup:AddToggle("InfJumpToggle", {
 
 })
 
--- Inf Jump Method Dropdown
 
 PlayerMovimentGroup:AddDropdown("InfJumpMethodDropdown", {
 
@@ -476,7 +436,6 @@ PlayerMovimentGroup:AddDropdown("InfJumpMethodDropdown", {
 
 })
 
--- Loop Inf Jump
 
 local UserInputService = game:GetService("UserInputService")
 
