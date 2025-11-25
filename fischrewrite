@@ -6,13 +6,12 @@ local ThemeManager = loadstring(game:HttpGet(repo .. "addons/ThemeManager.lua"))
 
 local SaveManager = loadstring(game:HttpGet(repo .. "addons/SaveManager.lua"))()
 
--- Cria a janela principal
 
 local Window = Library:CreateWindow({
 
     Title = "Not Hub",
 
-    Footer = "Testing",
+    Footer = "Rewrite",
 
     Icon = 95816097006870,
 
@@ -27,7 +26,7 @@ local MainTab = Window:AddTab("Main", "house")
 
 local GroupBoxes = {}
 
-local groupboxNames = { "Fishing Features", "Player Moviment", "TP Features", "Quality Of Life" }
+local groupboxNames = { "Main Features", "Movement", "TP Tools", "Others" }
 
 for i, name in ipairs(groupboxNames) do
 
