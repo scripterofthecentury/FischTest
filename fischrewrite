@@ -1217,9 +1217,9 @@ TPGroup:AddButton("TPNOW", {
 
 QoLGroup:AddToggle("InfiniteOxygenToggle", {
 
-    Text = "Infinite Oxygen / Heat",
+    Text = "Infinite Oxygen",
 
-    Tooltip = "Disables all scripts inside your Resources folder (Oxygen/Heat)",
+    Tooltip = "Disables all scripts inside your Resources folder (Oxygen)",
 
     Callback = function(state)
 
