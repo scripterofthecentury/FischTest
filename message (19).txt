@@ -35,9 +35,14 @@ local Success, Error = pcall(function()
 	local TeleportService = game:GetService("TeleportService")
 
 
-	local Toasts = loadstring(
-		game:HttpGet("https://raw.githubusercontent.com/newtoyotacamry/scripts/refs/heads/main/Toast")
-	)()
+	local Toasts = {}
+function Toasts.CreateToast(id, title, message, icon, duration)
+    game.StarterGui:SetCore("SendNotification", {
+        Title = title,
+        Text = message,
+        Duration = duration or 3
+    })
+end
 
 	local function InteractiveToast()
 		local ActiveToastObject = Instance.new("ScreenGui")
@@ -2717,5 +2722,6 @@ serverGroupbox:AddButton({
 
 	SaveManager:LoadAutoloadConfig()
 	PreAutoloadConfig = false
+
 
 end)
